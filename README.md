@@ -40,7 +40,7 @@ $ git config --global user.name "USER_NAME"
 
 $ git config --global user.email "YOUR-EMAIL.com"
 
-Now connect to the repository on Git Hub using this command.
+Now connect to the repository on GitHub using this command.
 
 
 $ git remote add origin https://github.com/USER-NAME/repository.git 
