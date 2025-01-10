@@ -9,7 +9,7 @@ Ensure you have the following installed on your system.
 
 ### Git
 
-Frist, create a working directory for you github projects.
+First, you need to create a working directory for your GitHub projects.
 
 ### Create TWO directories DIRECTORY1 && DIRECTORY2
 ```
@@ -20,7 +20,7 @@ $ mkdir -p directory1
 $ cd mygihub
 ```
 
-Inside mygithub create another directory similar to your github cloud repo.
+Inside mygithub create another directory similar to your GitHub cloud repo.
 
 ```
 $ mkdir -p directory2
@@ -40,24 +40,24 @@ $ git config --global user.name "USER_NAME"
 
 $ git config --global user.email "YOUR-EMAIL.com"
 
-Now connect to the repository on github using this command.
+Now connect to the repository on Git Hub using this command.
 
 
 $ git remote add origin https://github.com/USER-NAME/repository.git 
 
-Verify your access to github repository.
+Verify your access permissions with the repository by checking your repository
 
 ```
 $ remote -v
 ```
 
-### Authinticate connection with your TOKEN-KEY
+### Authenticate connection with your TOKEN-KEY
 
 ```
 $ git remote set-url origin https://USER-NAME:TOKEN-KEY@github.com/USER-NAME/repository.git
 ```
 
-Fetch, Branches and all changes in thier history.
+Fetch, Branches, and all changes in their history.
 
 ```
 $ git fetch origin
@@ -81,7 +81,7 @@ $ git switch main
 $ git branch
 ```
 
-[Git Pull Origin]: will show you any changes that have accrued in the Repo.
+[Git Pull Origin]: will show you any changes accrued in the Repo.
 
 ```
 $ git pull origin
