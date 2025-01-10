@@ -1,0 +1,15 @@
+{
+    "basename": true,
+    "colorscheme": "catppuccin-macchiato",
+    "hlsearch": true,
+    "mkparents": true,
+    "scrollmargin": 20,
+    "softwrap": true,
+    "statusformatl": "$(status.branch) $(filename) |$(modified)($(line),$(col))| $(status.paste)|ft:$(opt:filetype)| $(opt:fileformat) | $(opt:encoding) [$(status.size)] [lines:$(status.lines)]",
+    "statusformatr": "",
+    "sucmd": "doas",
+    "tabhighligh": true,
+    "tabsize": 80,
+    "worwrap": true,
+    "xterm": true
+}
