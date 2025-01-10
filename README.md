@@ -1,5 +1,4 @@
-# GitMyDocs Connecting Git to Github
-
+# GitMydocs Connecting Git to Github
 
 This directory contains the dotfiles for my system.
 
@@ -87,25 +86,58 @@ $ git branch
 $ git pull origin
 ```
 
+### Staging changes
+
+Once you’ve made changes to your files, git add stages them, which means it marks the files for the next commit. 
+I personally prefer using git add . to stage all changes at once, but you can also add individual files.
+
 ```
 $ git add .
 ```
+
+### Committing your changes
+
+This command takes your staged changes and commits them to the repository history. 
+Always include a meaningful message with -m to remember the purpose of the change.
 
 ```
 $ git commit -m "commit add message"
 ```
 
+### After committing your changes locally, use git push to upload your commit to a remote repository.
+
 ```
-$ git push origin
+$ git push origin master
 ```
+
+### This command fetches the changes from the remote repository and merges them into your local branch.
+
+```
+$ git pull origin master
+```
+
+[Note]: you can use this new config entry to automatically setup remote tracking:
+
+git config --global push.autoSetupRemote true
+
+After that, when you do git push tracking is setup automatically. No need for git push -u origin my_branch
 
 ```
 $ git push --set-upstream origin master
 ```
 
+### Finding your way:
+
+Sometimes, you need to check the status or review the history of your repository.
 ```
-$ git push origin
+$ git log
 ```
+### This command displays the state of the working directory and the staging area.
+
+```
+$ git status
+```
+
 
 [Connecting Git to Github in 8 minutes](https://www.youtube.com/watch?v=qYoc07Da6kg).
 
