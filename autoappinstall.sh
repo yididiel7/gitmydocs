@@ -46,8 +46,9 @@ sudo pacman -S \
 	thunar-media-tags-plugin \
 	thunar-volman \
 	timeshift \
-	tlrc-git \
-	ueberzug \
+    tlrc-git \
+    ttyper \	
+    ueberzug \
 	ufw-extras \
 	vim \
 	wcm \
