@@ -2,6 +2,7 @@
 acpi
 alacritty
 ansiweather
+apache-tools
 archcraft-about
 archcraft-artworks
 archcraft-backgrounds
@@ -70,6 +71,8 @@ archcraft-randr
 archcraft-ranger
 archcraft-sddm-theme
 archcraft-vim
+asciinema
+asciinema-agg
 atril
 autoconf
 automake
@@ -83,6 +86,7 @@ bison
 blueman
 bluez
 bluez-utils
+boxes
 brltty
 broadcom-wl
 btop
@@ -100,6 +104,7 @@ cryptsetup
 cups
 cups-filters
 cups-pdf
+devtools
 dhclient
 dhcpcd
 dialog
@@ -114,6 +119,7 @@ diffutils
 dmidecode
 dmraid
 dnsmasq
+docker
 dosfstools
 downgrade
 dunst
@@ -172,6 +178,7 @@ haskell-pandoc
 hdparm
 highlight
 htop
+http-parser
 hwinfo
 hyperv
 i3lock-color
@@ -221,6 +228,7 @@ mako
 man-db
 man-pages
 mdadm
+mediainfo
 meld
 mesa
 mesa-utils
@@ -260,10 +268,12 @@ noto-fonts-cjk
 noto-fonts-emoji
 npm
 ntfs-3g
+nvm
 nvme-cli
 obmenu-generator
 open-iscsi
 openconnect
+openresolv
 openssh
 openvpn
 os-prober
@@ -319,15 +329,16 @@ simplescreenrecorder
 slop
 smartmontools
 sof-firmware
+soundconverter
 sparklines-git
 squashfs-tools
 sudo
 system-config-printer
-systemd-resolvconf
 tcpdump
 terminus-font
 texlive-binextra
 texlive-fontsextra
+thefuck
 thunar
 thunar-archive-plugin
 thunar-media-tags-plugin
@@ -337,6 +348,7 @@ tlrc-git
 tmux
 tpm2-tss
 trash-cli
+ttyper
 tumbler
 udftools
 udisks2
@@ -345,6 +357,7 @@ ufw-extras
 unarchiver
 unrar
 unzip
+update-grub
 usb_modeswitch
 usbmuxd
 usbutils
@@ -364,6 +377,7 @@ wmctrl
 wmname
 wpa_supplicant
 wvdial
+x11-ssh-askpass
 x264
 x265
 xarchiver

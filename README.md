@@ -1,144 +1,119 @@
-# GitMydocs Connecting Git to Github
+# GitMydocs: Connecting Git to Github
 
-This directory contains the dotfiles for my system.
+This guide helps you set up and configure Git with GitHub. For video tutorial, see [Connecting Git to Github in 8 minutes](https://www.youtube.com/watch?v=qYoc07Da6kg).
 
-## requirements
+## Prerequisites
 
-Ensure you have the following installed on your system.
+Ensure you have [Git](https://git-scm.com/downloads) installed on your system.
 
-### Git
+## Initial Setup
 
-First, you need to create a working directory for your GitHub projects.
+### 1. Create Working Directories
 
-### Create TWO directories DIRECTORY1 && DIRECTORY2
-```
-$ mkdir -p directory1
-```
-### Cd-Into directory
-```
-$ cd mygihub
-```
+First, create two directories for your GitHub projects:
 
-Inside mygithub create another directory similar to your GitHub cloud repo.
+```bash
+# Create first directory
+mkdir -p directory1
 
-```
-$ mkdir -p directory2
+# Navigate into it
+cd directory1
+
+# Create second directory for GitHub repo
+mkdir -p directory2
 ```
 
-### To start your project’s version control, navigate to your project directory and run:
+### 2. Initialize Git Repository
 
-```
-$ git init
-```
+Navigate to your project directory and initialize Git:
 
-### Making Git yours
-
-Configure your Git identity:
-
-$ git config --global user.name "USER_NAME"
-
-$ git config --global user.email "YOUR-EMAIL.com"
-
-Now connect to the repository on GitHub using this command.
-
-
-$ git remote add origin https://github.com/USER-NAME/repository.git 
-
-Verify your access permissions with the repository by checking your repository
-
-```
-$ remote -v
+```bash
+git init
 ```
 
-### Authenticate connection with your TOKEN-KEY
+### 3. Configure Git Identity
 
-```
-$ git remote set-url origin https://USER-NAME:TOKEN-KEY@github.com/USER-NAME/repository.git
-```
+Set your Git username and email:
 
-Fetch, Branches, and all changes in their history.
-
-```
-$ git fetch origin
+```bash
+git config --global user.name "USER_NAME"
+git config --global user.email "YOUR-EMAIL.com"
 ```
 
-### Show commit logs
+### 4. Connect to GitHub Repository
 
-```
-$ git log
-```
+```bash
+# Add remote repository
+git remote add origin https://github.com/USER-NAME/repository.git
 
-If you need to switch branches use this command.
+# Verify remote connection
+git remote -v
 
-```
-$ git switch main
-```
-
-### To see which branch type
-
-```
-$ git branch
+# Authenticate with personal access token
+git remote set-url origin https://USER_NAME:TOKEN-KEY@github.com/USER-NAME/repository.git
 ```
 
-[Git Pull Origin]: will show you any changes accrued in the Repo.
+## Basic Git Operations
 
-```
-$ git pull origin
-```
+### Fetching & Branching
 
-### Staging changes
+```bash
+# Fetch all branches and history
+git fetch origin
 
-Once you’ve made changes to your files, git add stages them, which means it marks the files for the next commit. 
-I personally prefer using git add . to stage all changes at once, but you can also add individual files.
+# View commit history
+git log
 
-```
-$ git add .
-```
+# Switch branches
+git switch main
 
-### Committing your changes
+# List branches
+git branch
 
-This command takes your staged changes and commits them to the repository history. 
-Always include a meaningful message with -m to remember the purpose of the change.
-
-```
-$ git commit -m "commit add message"
+# Pull changes from remote
+git pull origin
 ```
 
-### After committing your changes locally, use git push to upload your commit to a remote repository.
+### Making Changes
 
+```bash
+# Stage all changes
+git add .
+
+# Commit changes with message
+git commit -m "commit message"
+
+# Push changes to remote repository
+git push origin master
+
+# Pull latest changes from remote
+git pull origin master
 ```
-$ git push origin master
-```
 
-### This command fetches the changes from the remote repository and merges them into your local branch.
+### Setting Up Remote Tracking
 
-```
-$ git pull origin master
-```
+To automatically set up remote tracking, configure Git globally:
 
-[Note]: you can use this new config entry to automatically setup remote tracking:
-
+```bash
 git config --global push.autoSetupRemote true
-
-After that, when you do git push tracking is setup automatically. No need for git push -u origin my_branch
-
-```
-$ git push --set-upstream origin master
 ```
 
-### Finding your way:
+Or manually set upstream:
 
-Sometimes, you need to check the status or review the history of your repository.
-```
-$ git log
-```
-### This command displays the state of the working directory and the staging area.
-
-```
-$ git status
+```bash
+git push --set-upstream origin master
 ```
 
+### Useful Commands
 
-[Connecting Git to Github in 8 minutes](https://www.youtube.com/watch?v=qYoc07Da6kg).
+```bash
+# View repository status
+git status
+
+# View commit history
+git log
+```
+
+---
 
 Copyright (C) 2025 by Yididiel Hills All rights reserved <mobw4u@gmail.com>.

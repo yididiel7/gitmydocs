@@ -1,59 +1,67 @@
-#var
-link-style=blue,bold,underline
-active-link-style=yellow,bold
-match-style=underline,bold,nocolor
+# Configuration for GNU Info Reader (~/.infokey)
+# Documentation: <https://www.gnu.org/software/texinfo/manual/info/info.html>
 
-#Here is an example ‘~/.infokey' file which specifies the key bindings that
-#are activated by the ‘--vi-keys’ option to Info (*note --vi-keys::).
+#var
+# Visual styling for links and matches
+link-style=blue,bold,underline          # How regular links appear
+active-link-style=yellow,bold           # How the current link appears
+match-style=underline,bold,nocolor      # How search matches are highlighted
+
+# VI-style key bindings (activated with --vi-keys)
+# See: <https://www.gnu.org/software/texinfo/manual/info/html_node/Vi-Keys.html>
 
 #info
-g       first-node
-G       last-node
-\mb     beginning-of-node
-\me     end-of-node
-j       next-line
-k       prev-line
+# Navigation Commands
+g       first-node                      # Jump to first node
+G       last-node                       # Jump to last node
+\mb     beginning-of-node               # Go to start of current node
+\me     end-of-node                     # Go to end of current node
+j       next-line                       # Move cursor down one line
+k       prev-line                       # Move cursor up one line
 
-f       scroll-forward-page-only
-^f      scroll-forward-page-only
-\m\     scroll-forward-page-only
-z       scroll-forward-page-only-set-window
+# Scrolling Commands
+f       scroll-forward-page-only        # Scroll forward one page
+^f      scroll-forward-page-only        # Alternative forward scroll
+\m\     scroll-forward-page-only        # Alternative forward scroll
+z       scroll-forward-page-only-set-window  # Scroll and set window
 
-b       scroll-backward-page-only
-^b      scroll-backward-page-only
-w       scroll-backward-page-only-set-window
+b       scroll-backward-page-only       # Scroll backward one page
+^b      scroll-backward-page-only       # Alternative backward scroll
+w       scroll-backward-page-only-set-window # Scroll back and set window
 
-\kd     down-line
-^e      down-line
-^j      down-line
-^m      down-line
-\ku     up-line
-^y      up-line
-^k      up-line
-d       scroll-half-screen-down
-^d      scroll-half-screen-down
-u       scroll-half-screen-up
-^u      scroll-half-screen-up
+# Line Movement
+\kd     down-line                       # Move down one line
+^e      down-line                       # Alternative down
+^j      down-line                       # Alternative down
+^m      down-line                       # Alternative down
+\ku     up-line                         # Move up one line
+^y      up-line                         # Alternative up
+^k      up-line                         # Alternative up
+d       scroll-half-screen-down         # Scroll half page down
+^d      scroll-half-screen-down         # Alternative half page down
+u       scroll-half-screen-up           # Scroll half page up
+^u      scroll-half-screen-up           # Alternative half page up
 
-^xn     next-node
-^xp     prev-node
-^xu     up-node
-'       last-node
-\mt     top-node
-\md     dir-node
-^xg     goto-node
-I       goto-invocation-node
-n       search-next
-N       quit
+# Node Navigation
+^xn     next-node                       # Go to next node
+^xp     prev-node                       # Go to previous node
+^xu     up-node                         # Go to parent node
+'       last-node                       # Return to last visited node
+\mt     top-node                        # Go to top node
+\md     dir-node                        # Go to directory node
+^xg     goto-node                       # Go to specified node
+I       goto-invocation-node            # Go to program invocation node
+n       search-next                     # Find next search match
+N       quit                            # Exit Info reader
 
 #echo-area
-\mh     echo-area-backward
-\ml     echo-area-forward
-\m0     echo-area-beg-of-line
-\m$     echo-area-end-of-line
-\mw     echo-area-forward-word
-\mx     echo-area-delete
-\mu     echo-area-abort
-^v      echo-area-quoted-insert
-\mX     echo-area-kill-word
-
+# Echo Area Commands (Command Line)
+\mh     echo-area-backward              # Move backward in command line
+\ml     echo-area-forward               # Move forward in command line
+\m0     echo-area-beg-of-line          # Go to start of command line
+\m$     echo-area-end-of-line          # Go to end of command line
+\mw     echo-area-forward-word         # Move forward one word
+\mx     echo-area-delete               # Delete character
+\mu     echo-area-abort                # Cancel command
+^v      echo-area-quoted-insert        # Insert literal character
+\mX     echo-area-kill-word            # Delete word
