@@ -1260,7 +1260,7 @@ hash -d dl=~/Downloads
 # -----------------------------------------------------------------------------
 # 🔒 SENSITIVE DATA (consider moving to .zshrc-personal)
 # -----------------------------------------------------------------------------
-# export GITHUB_TOKEN="ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+# export GITHUB_TOKEN="please_provide_your_github_token"
 # export LMS_EMAIL_USER="your_email@gmail.com"
 # export LMS_EMAIL_PASS="your_passphrase"
 # export XDG_RUNTIME_DIR="/run/user/$(id -u)"
