@@ -81,7 +81,165 @@ alias ill='logo-ls -al'                   # Long listing
 alias ilsg='logo-ls -D'                   # Only directories
 alias ils='logo-ls'                       # Default with logos
 
-[Previous content continues unchanged...]
-```
+[Previous content continue changed...]
+alias cl='clear'                          # Clear terminal screen
+alias re='reset'                          # Reset terminal completely
+alias vim='nvim'                          # Use NeoVim instead of Vim
+alias df='df -h | lolcat'                 # Human readable disk usage with colors
+alias ip='ip --color=auto'                # Colorized IP output
+alias wtr='curl wttr.in/Dimona'           # Weather information for Dimona
+alias nd='ncdu --color dark'              # NCurses Disk Usage with dark theme
+alias bpyt='bpytop'                       # Resource monitor
+alias cat='ccat'                          # Colored cat output
+alias dict='dict -d moby-thesaurus'       # Dictionary
+alias thesaurus='dict -d moby-thesaurus'  # Dictionary/thesaurus lookup
+alias firefox='/opt/firefox/firefox'      # Direct Firefox launcher
+alias info='pinfo'                        # Enhanced info reader
+alias rec='asciinema rec'                 # Record terminal session
+alias play='asciinema play'               # Play recorded terminal session
+alias stream='asciinema stream -r'        # Stream recorded terminal session
+alias yt-dlp='yt-dlp -f bv+ba/b'          # This command will prioritize downloading the best video and audio tracks separately
+alias cp="cp -riv"     # cp Alias to copy files and directories recursively (-r), interactively (-i), and with verbose output (-v)
+alias ln="ln -iv"      # ln Alias to create symbolic links with interactive (-i) prompt and verbose (-v) output
+alias rm="rm -iv"      # rm Alias to remove files and directories interactively (-i) with verbose (-v) output
+alias mv="mv -iv"      # mv Alias to move files and directories interactively (-i) with verbose (-v) output
+alias mkdir="mkdir -vp" # mkdir Alias to create parent directories (-p) and verbose (-v) output
+alias po="sudo shutdown now"              # Poweroff
+alias rs="sudo reboot"                    # Reboot
+alias cd..='cd ..'                        # Fix common typo
+alias pdw='pwd'                           # Fix common typo
+alias ncmpcpp='sudo ncmpcpp'              # Music player with sudo
+alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
+alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
+alias ec="$EDITOR $HOME/.zshrc"           # Edit zshrc
+alias sc="source $HOME/.zshrc"            # Source zshrc
+alias szp="source $HOME/.zshrc-personal"  # Source personal zshrc
+alias grep='grep --color=auto'            # Colorized grep
+alias egrep='egrep --color=auto'          # Extended grep with colors
+alias fgrep='fgrep --color=auto'          # Fast grep with colors
+alias fcl='fortune | cowsay | lolcat'     # Fortune cookie with cow and colors
+alias lolls='ls -l | lolcat'              # Colorful directory listing
+alias ft='fortune | lolcat'               # Colorful fortune cookies
+alias ls="eza --long --color=always --icons=always --no-user"  # Colorful directory listing
+alias exa="eza --long --color=always --icons=always --no-user"  # Colorful directory listing
+alias eza='exa -alh'  # Colorful directory listing
+alias l='exa -lbF --git' # Colorful directory listing
+alias ll='eza -la'  
+alias llm='exa -lbGd --git --sort=modified' 
+alias la='exa -lbhHigUmuSa --time-style=long-iso --git --color-scale'
+alias lx='exa -lbhHigUmuSa@ --time-style=long-iso --git --color-scale'
+alias lt='exa --tree --level=2'
+alias lS='exa -1'
+alias ls='lsd -F --group-dirs first'
+alias ll='lsd --all --header --long --group-dirs first'
+alias tree='lsd --tree'
+alias lt='lsd --tree'
+# Fallback to standard ls
+#    alias ls="ls --color=auto"
+#    alias ll='ls -la'
+#    alias lt='ls --tree' 2>/dev/null || alias lt='ls -R'
+alias ldc='lsd --group-directories-first' 2>/dev/null || alias ll='ls -l --group-directories-first'
+alias gcl='git clone --depth 1'           # Shallow clone
+alias gi='git init'                       # Initialize repo
+alias ga='git add'                        # Stage files
+alias gc='git commit -m'                  # Commit with message
+alias gp='git push origin master'         # Push to master
+alias g='gollama'
+# Logo-ls Commands
+# See: https://github.com/Yash-Handa/logo-ls
+if [[ -x "$(command -v logo-ls)" ]]; then
+    alias ilag='logo-ls -AD'              # All files except . and ..
+    alias ila='logo-ls -A'                # Almost all files
+    alias illg='logo-ls -alD'             # Long listing with logos
+    alias ill='logo-ls -al'               # Long listing
+    alias ilsg='logo-ls -D'               # Only directories
+    alias ils='logo-ls'                   # Default with logos
+alias hw='hwinfo --short'                 # Hardware information summary
+alias h='history'                         # List history
+alias hl='history | bat'                  # List history with bat
+alias pacman='sudo pacman --color auto'   # Pacman with colors
+alias update='sudo pacman -Syyu'          # Update standard packages
+alias upd='sudo pacman -Syu'              # Update standard pkgs and AUR pkgs
+alias sps='sudo pacman -S'                # Install
+alias spss='sudo pacman -Ss'              # Search
+alias spq='sudo pacman -Q'                # Query
+alias spr='sudo pacman -R'                # Remove
+alias sprs='sudo pacman -Rs'              # Remove with dependencies
+alias sprdd='sudo pacman -Rdd'            # Remove orphaned packages
+alias spqo='sudo pacman -Qo'              # What provides a package
+alias spsii='sudo pacman -Sii'            # Package information
+alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
+alias mirrord="sudo reflector --latest 30 --number 10 --sort delay --save /etc/pacman.d/mirrorlist"
+alias mirrors="sudo reflector --latest 30 --number 10 --sort score --save /etc/pacman.d/mirrorlist"
+alias mirrora="sudo reflector --latest 30 --number 10 --sort age --save /etc/pacman.d/mirrorlist"
+alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'  # Cleanup orphaned packages
+alias list="sudo pacman -Qqe"                    # List explicitly installed packages
+alias listt="sudo pacman -Qqet"                  # List explicitly installed packages without dependencies
+alias listaur="sudo pacman -Qqem"                 # List AUR packages
+alias clean="clear; seq 1 $(tput cols) | sort -R | sparklines | lolcat"
+alias rg="rg --sort path"
+alias jctl="journalctl -p 3 -xb"
+alias upqll='paru -Syu --noconfirm'
+alias paruskip='paru -S --mflags --skipinteg'
+alias yayskip='yay -S --mflags --skipinteg'
+alias cpu="cpuid -i | grep uarch | head -n 1"
+alias audio="pactl info | grep 'Server Name'"  # Check if system is using PulseAudio or Pipewire
+alias lt="eza --tree --level=2 2>/dev/null || ls --tree 2>/dev/null || ls -R"  # Tree view
+alias psa="ps auxf"                           # Display all processes in BSD format with full details and ASCII art process tree
+alias psgrep="ps aux | grep -v grep | grep -i -e VSZ -e"    # Search processes excluding grep process itself
+alias yta-aac="yt-dlp --extract-audio --audio-format aac"   # Download and convert to AAC audio
+alias yta-best="yt-dlp --extract-audio --audio-format best"  # Download best quality audio
+alias yta-flac="yt-dlp --extract-audio --audio-format flac"  # Download and convert to FLAC format
+alias yta-mp3="yt-dlp --extract-audio --audio-format mp3"    # Download and convert to MP3
+alias ytv-best="yt-dlp -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio' --merge-output-format mp4"  # Download best quality video+audio
+alias kpi='killall picom'                     # Terminate all instances of the picom compositor
+alias fix-permissions="sudo chown -R $USER:$USER ~/.config ~/.local"  # Reset ownership of config directories to current user
+alias copilot='gh copilot'
+alias gcs='gh copilot suggest'
+alias gce='gh copilot explain'
+alias gcse='gh config set editor "nvim --wait"'
+alias copilot-cli='copilot'                   # GitHub Copilot CLI (standalone)
+alias depends='function_depends'
+alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'
+alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
+alias grim='grim -g "$(slurp)"'
+alias wl-copy='xclip -selection clipboard'
+alias wl-paste='xclip -selection clipboard -o'
+alias sortclipboard='wl-paste | sort | wl-copy'
+alias aft="android-file-transfer"
+alias whereami='echo $PWD'
+alias fabric='fabric-ai'
+alias -s json=jless    # Open JSON files with jless
+alias -s md=bat        # Open Markdown files with bat
+alias -s go='$EDITOR'  # Open Go files with the editor
+alias -s rs='$EDITOR'  # Open Rust files with the editor
+alias -s txt=bat       # Open text files with bat
+alias -s log=bat       # Open log files with bat
+alias -s py='$EDITOR'  # Open Python files with the editor
+alias -s js='$EDITOR'  # Open JavaScript files with the editor
+alias -s ts='$EDITOR'  # Open TypeScript files with the editor
+alias -s conf='$EDITOR'  # Open configuration files with the editor
+alias -s yml='$EDITOR'  # Open YAML files with the editor
+alias -s toml='$EDITOR'  # Open TOML files with the editor
+alias -s sh='$EDITOR'  # Open shell scripts with the editor
+alias -s rb='$EDITOR'  # Open Ruby files with the editor
+alias -s java='$EDITOR'  # Open Java files with the editor
+alias -s c='$EDITOR'  # Open C files with the editor
+alias -s cpp='$EDITOR'  # Open C++ files with the editor
+alias -s cs='$EDITOR'  # Open C# files with the editor
+alias -s html='$EDITOR'  # Open HTML files with the editor
+alias -s css='$EDITOR'  # Open CSS files with the editor
+alias -s js='$EDITOR'  # Open JavaScript files with the editor
+alias -s ts='$EDITOR'  # Open TypeScript files with the editor
+alias -s md=bat        # Open Markdown files with bat
+alias -s mkd=bat       # Open Markdown files with bat
+alias mkgrub='sudo grub-mkconfig -o /boot/grub/grub.cfg'  # Generate GRUB configuration
+alias zcp='zmv -C' # Copy with patterns
+alias zln='zmv -L' # Link with patterns
+# Access with ~name syntax, e.g., cd ~yt or ls ~yt
+alias -g NE='2>/dev/null'
+alias -g NO='>/dev/null'
+alias -g NUL='>/dev/null 2>&1'
+alias -g J='| jq'
 
 [Note: I'll continue with the rest but reached character limit. The core idea is maintained throughout - grouping related commands, adding descriptions and links to tools' documentation where relevant. Would you like me to continue with the next section?]
