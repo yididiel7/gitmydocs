@@ -1,0 +1,302 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+]{article}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\author{}
+\date{}
+
+\begin{document}
+
+\textbf{Title:} Introduction to Command-Line Interfaces (CLIs) on Arch
+Linux \textbf{Author:} Sr.~Yididiel Hills Arch Linux AMD, Developer
+\textbf{Date:} November, 15-11-2025 (20:57:02 IST) \textbf{lfnc:}
+Beginner\_Tutorial\_Arch0\_Intro\_CLI.md \textbf{Copyright:} ©
+2025--2026 Sr.~Tyrone Hills \textbf{License:} MIT -- see LICENSE file
+for details
+
+Welcome to this comprehensive DIY tutorial on installing and configuring
+Command-Line Interfaces (CLIs) on Arch Linux.
+
+In this guide, we will walk you through the process of setting up a CLI
+environment on your Arch Linux system.
+
+\subsection{Required Dependencies}\label{required-dependencies}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{curl} package
+\item
+  \texttt{ssh-agent} package
+\item
+  \texttt{sshd} service package
+\item
+  \texttt{pwgen} command-line utility
+\end{itemize}
+
+\subsection{Estimated Time}\label{estimated-time}
+
+This tutorial should take approximately 1-2 hours to complete, depending
+on your familiarity with CLI basics and the complexity of your Arch
+Linux installation.
+
+\subsection{Skill Level}\label{skill-level}
+
+\begin{itemize}
+\tightlist
+\item
+  Beginner: This tutorial assumes a basic understanding of Linux
+  commands and file systems. If you are new to Linux or CLIs, we
+  recommend starting with a more comprehensive guide before attempting
+  this tutorial.
+\item
+  Intermediate: If you have some experience with Linux and CLIs, you
+  will likely find this tutorial easier to follow.
+\item
+  Advanced: If you are already familiar with CLI basics and advanced
+  system administration tasks, you may be able to complete this tutorial
+  quickly.
+\end{itemize}
+
+\subsection{Step-by-Step Instructions}\label{step-by-step-instructions}
+
+\subsubsection{Step 1: Install Required
+Dependencies}\label{step-1-install-required-dependencies}
+
+\begin{itemize}
+\tightlist
+\item
+  Open a terminal on your Arch Linux system.
+\item
+  Run the following command to install \texttt{curl},
+  \texttt{ssh-agent}, \texttt{sshd}, and \texttt{pwgen} packages:
+\end{itemize}
+
+\begin{verbatim}
+sudo pacman -S curl ssh-agent sshd pwgen
+\end{verbatim}
+
+\subsubsection{Step 2: Generate SSH
+Keys}\label{step-2-generate-ssh-keys}
+
+\begin{itemize}
+\tightlist
+\item
+  Create a new SSH key pair using the following command:
+\end{itemize}
+
+\begin{verbatim}
+ssh-keygen -t rsa -b 4096
+\end{verbatim}
+
+\subsubsection{Step 3: Add SSH Key to
+System}\label{step-3-add-ssh-key-to-system}
+
+\begin{itemize}
+\tightlist
+\item
+  Add the generated SSH key to your system by running the following
+  command:
+\end{itemize}
+
+\begin{verbatim}
+ssh-agent -s
+ssh-add ~/.ssh/id_rsa
+\end{verbatim}
+
+\subsubsection{Step 4: Create SSH User}\label{step-4-create-ssh-user}
+
+\begin{itemize}
+\tightlist
+\item
+  Create a new user with SSH capabilities using the following command:
+\end{itemize}
+
+\begin{verbatim}
+useradd -m sshuser
+\end{verbatim}
+
+\subsubsection{Step 5: Generate Password for SSH
+User}\label{step-5-generate-password-for-ssh-user}
+
+\begin{itemize}
+\tightlist
+\item
+  Generate a password for the new SSH user using the following command:
+\end{itemize}
+
+\begin{verbatim}
+pwgen -s -1
+\end{verbatim}
+
+\subsubsection{Step 6: Configure SSH
+Service}\label{step-6-configure-ssh-service}
+
+\begin{itemize}
+\tightlist
+\item
+  Create a new file called \texttt{sudoers} in the \texttt{/etc/ssh/}
+  directory with the following contents:
+\end{itemize}
+
+\begin{verbatim}
+# /etc/sudoers
+
+Content of /etc/sudoers:
+
+all ALL=(ALL) NOPASSWD:/home/sshuser/bin
+all ALL=(ALL) NOPASSWD: /home/sshuser/sbin
+\end{verbatim}
+
+\subsubsection{Step 7: Set SSHD to Start at Boot
+Time}\label{step-7-set-sshd-to-start-at-boot-time}
+
+\begin{itemize}
+\tightlist
+\item
+  Create a new file called \texttt{rc.d\_sshd} in the
+  \texttt{/etc/init.d/} directory with the following contents:
+\end{itemize}
+
+\begin{verbatim}
+# /etc/init.d/rc.d_sshd
+
+Content of /etc/init.d/rc.d_sshd:
+
+chown sshuser:root /etc/init.d/rc.d_sshd
+chmod 644 /etc/init.d/rc.d_sshd
+\end{verbatim}
+
+\subsubsection{Step 8: Start SSHD at Boot
+Time}\label{step-8-start-sshd-at-boot-time}
+
+\begin{itemize}
+\tightlist
+\item
+  Create a new file called \texttt{systemd/system/ssh.service} in the
+  \texttt{/etc/systemd/system/} directory with the following contents:
+\end{itemize}
+
+\begin{verbatim}
+# /etc/systemd/system/ssh.service
+
+Content of /etc/systemd/system/ssh.service:
+
+[Unit]
+
+Description=SSH Service
+
+After=network.target
+
+[Service]
+
+User=sshuser
+Group=sshuser
+ExecStart=/usr/bin/sshd -F
+Restart=always
+
+[Install]
+
+WantedBy=multi-user.target
+\end{verbatim}
+
+\subsubsection{Step 9: Enable SSHD and Start at Boot
+Time}\label{step-9-enable-sshd-and-start-at-boot-time}
+
+\begin{itemize}
+\tightlist
+\item
+  Reload the systemd daemon to pick up the new configuration:
+\end{itemize}
+
+\begin{verbatim}
+sudo systemctl daemon-reload
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  Start the SSH service using the following command:
+\end{itemize}
+
+\begin{verbatim}
+sudo systemctl start ssh
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  Enable the SSH service to start at boot time:
+\end{itemize}
+
+\begin{verbatim}
+sudo systemctl enable ssh
+\end{verbatim}
+
+\subsubsection{Additional Tips and Troubleshooting
+Advice}\label{additional-tips-and-troubleshooting-advice}
+
+\begin{itemize}
+\tightlist
+\item
+  Make sure to replace \texttt{sshuser} with your desired username.
+\item
+  You can customize the SSH key format by adding additional options to
+  the \texttt{ssh-keygen} command. Refer to the official
+  \href{https://www.openssh.com/docs.html}{SSH documentation} for more
+  information.
+\item
+  If you encounter any issues during the installation process, refer to
+  the Arch Linux forums or the official
+  \href{https://wiki.archlinux.org/title/Installation_guide}{Arch Linux
+  documentation} for troubleshooting advice.
+\end{itemize}
+
+By following these steps, you should now have a fully functional
+Command-Line Interface on your Arch Linux system.
+
+\end{document}
