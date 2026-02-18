@@ -97,7 +97,4 @@ GROQ_API_BASE_URL=https://api.groq.com/openai/v1
 OLLAMA_API_URL=http://localhost:11434
 OLLAMA_HTTP_TIMEOUT=20m
 OPENROUTER_API_KEY=please_provide_your_openrouter_api_key
-OPENROUTER_API_BASE_URL=https://openrouter.ai/api/v1
-YOUTUBE_API_KEY=AIzaSyB0fcnXKDk0o6J37KNLksgMFox7TONWAO4
-JINA_AI_API_KEY=jina_17bff93880204873bb65e3e82b2de560DyULIhiPu83pkcLzpHM_SzW1F5QD
 ```
